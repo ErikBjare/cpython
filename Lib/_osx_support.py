@@ -387,7 +387,7 @@ def compiler_fixup(compiler_so, cc_args):
 
     elif not _supports_arm64_builds():
         # Look for "-arch arm64" and drop that
-        for idx in reversed(range(len(compiler_so))):
+        for idx in reversed(range(len(compiler_so)-1)):
             if compiler_so[idx] == '-arch' and compiler_so[idx+1] == "arm64":
                 del compiler_so[idx:idx+2]
 
